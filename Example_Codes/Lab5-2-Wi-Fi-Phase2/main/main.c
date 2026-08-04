@@ -22,6 +22,13 @@ static EventGroupHandle_t s_wifi_event_group;
 #define EXAMPLE_ESP_WIFI_SSID "MY_SSID"
 #define EXAMPLE_ESP_WIFI_PASS "MY_PASSWORD"
 
+#ifndef WIFI_REASON_ASSOC_EXPIRE
+#define WIFI_REASON_ASSOC_EXPIRE 4
+#endif
+#ifndef WIFI_REASON_NOT_AUTHED
+#define WIFI_REASON_NOT_AUTHED 6
+#endif
+
 // Convert wifi_reason_code_t to readable string
 static const char *get_disconnect_reason_name(uint8_t reason) {
   switch (reason) {
